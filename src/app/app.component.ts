@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-course-fourth-assignment';
+  counters = [];
+
+  onStart(event): void {
+    this.counters.push(event);
+  }
 }

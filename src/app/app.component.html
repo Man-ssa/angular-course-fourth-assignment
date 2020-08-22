@@ -1,8 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-5">
       <h2>Fourth Assignment !!!</h2>
-      <app-game-control></app-game-control>
+      <app-game-control (counter)="onStart($event)"></app-game-control>
+      <hr>
+      <div class="pull-left">
+        <app-odd *ngFor="let count of counters">
+          <div *ngIf="count%2!==0">
+            <p style="color: brown">Odd - {{ count }}</p>
+          </div>
+        </app-odd>
+      </div>
+      <div class="pull-right">
+        <app-even *ngFor="let count of counters">
+          <div *ngIf="count%2===0">
+            <p style="color: darkblue">Even - {{ count }}</p>
+          </div>
+        </app-even>
+      </div>
     </div>
   </div>
 </div>
